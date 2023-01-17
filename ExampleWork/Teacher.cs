@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ExampleWork
 {
-    class Ogretmen
+    class Teacher
     {
         public int Id { get; set; }
-        public string Ad { get; set; }
-        public string Soyad { get; set; }
+        public string Name { get; set; }
+        public string SurName { get; set; }
        
 
     }
