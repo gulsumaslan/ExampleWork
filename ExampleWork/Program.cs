@@ -11,22 +11,22 @@ namespace ExampleWork
         {
 
            
-            List<Bölümler> bolumler = new List<Bölümler>
+            List<Sections> sections = new List<Sections>
             {
-                new Bölümler{Id=1,FakülteId=2,FakulteAdi=Messages.FAdi,bölümAdi=Messages.BAdi},
-                new Bölümler{Id=1,FakülteId=3,FakulteAdi=Messages.FAdi,bölümAdi=Messages.BAdi1},
-                new Bölümler{Id=1,FakülteId=4,FakulteAdi=Messages.FAdi1,bölümAdi=Messages.BAdi2},
+                new Sections{Id=1,FakültyId=2,FakultyName=Messages.FName,sectionName=Messages.BName},
+                new Sections{Id=1,FakültyId=3,FakultyName=Messages.FName,sectionName=Messages.BName1},
+                new Sections{Id=1,FakültyId=4,FakultyName=Messages.FName1,sectionName=Messages.BName2},
 
 
             };
 
-            var results = bolumler.Where(b => b.bölümAdi==Messages.BAdi1);
+            var results = sections.Where(b => b.sectionName==Messages.BName1);
             foreach (var result in results)
             {
-                Console.WriteLine(result.FakulteAdi);
+                Console.WriteLine(result.FakultyName);
             }
 
-            //var results4 = bolumler.Where(b => b.bölümAdi == Message.dekan); // dekan sınıfı public olduğundan kullanabildik.
+            //var results4 = sections.Where(b => b.sectionName == Message.dean); // dekan sınıfı public olduğundan kullanabildik.
             //foreach (var result4 in results4)
             //{
             //    Console.WriteLine(result4.Id);
@@ -38,54 +38,54 @@ namespace ExampleWork
 
 
 
-            var results1 = bolumler.FindAll(b => b.Id==1);
+            var results1 = sections.FindAll(b => b.Id==1);
             foreach (var result1 in results1)
             {
-                Console.WriteLine(result1.FakulteAdi);
+                Console.WriteLine(result1.FakultyName);
             }
 
 
             Console.WriteLine(Messages.arti);
 
-            List<Ogrenci> ogrencis = new List<Ogrenci>
+            List<Student> students = new List<Student>
             {
-                new Ogrenci{ Id=1,Ad=Messages.Ad1,Soyad=Messages.SAd2,No=11111,},
-                new Ogrenci{ Id=1,Ad=Messages.Ad2,Soyad=Messages.SAd1,No=12221},
-                new Ogrenci{ Id=1,Ad=Messages.Ad3,Soyad=Messages.SAd1,No=222},
-                new Ogrenci{ Id=1,Ad=Messages.Ad4,Soyad=Messages.SAd1,No=333},
-                new Ogrenci{ Id=1,Ad=Messages.Ad5,Soyad=Messages.SAd1,No=44},
+                new Student{ Id=1,Name=Messages.Name1,SurName=Messages.SName2,No=11111,},
+                new Student{ Id=1,Name=Messages.Name2,SurName=Messages.SName1,No=12221},
+                new Student{ Id=1,Name=MessagesName3,SurName=Messages.SName1,No=222},
+                new Student{ Id=1,Name=Messages.Name4,SurName=Messages.SName1,No=333},
+                new Student{ Id=1Name=Messages.Name5,SurName=Messages.SName1,No=44},
 
             };
 
-            var results2 = ogrencis.Where(o => o.Soyad ==Messages.SAd1);
+            var results2 = students.Where(o => o.SurName ==Messages.Name1);
             foreach (var result2 in results2)
             {
-                Console.WriteLine(result2.Ad);
+                Console.WriteLine(result2.Name);
             }
 
 
-            //List<Ogretmen> ogretmens = new List<Ogretmen>
+            //List<Teacher> teachers = new List<Teacher>
             //{
-            //    new Ogretmen{Id=2,Ad=Messages.Ad6,Soyad=Messages.SAd4},
-            //    new Ogretmen{Id=2,Ad=Messages.Ad2,Soyad=Messages.SAd1},
-            //    new Ogretmen{Id=2,Ad=Messages.Ad7,Soyad=Messages.SAd3},
+            //    new Teacher{Id=2,Name=Messages.Name6,SurName=Messages.SName4},
+            //    new Teacher{Id=2Name=Messages.Name2,SurName=Messages.SName1},
+            //    newTeacher{Id=2,Name=Messages.Name7,SurName=Messages.SName3},
             //};
 
-            //var results5 = ogretmens.Where(og => og.Id == 1);
+            //var results5 = teachers.Where(og => og.Id == 1);
             //foreach (var result5 in results5)
             //{
-            //    Console.WriteLine(result5.Ad);
+            //    Console.WriteLine(result5.Name);
             //}
 
             Console.WriteLine(Messages.arti);
 
-            Ogrenci ogrenci = new Ogrenci();  // fonksiyon kullanımı
-            ogrenci.Work();
+            Student student  = new Student ();  // fonksiyon kullanımı
+            student .Work();
 
             Console.WriteLine(Messages.arti);
 
-            Dekan dekan = new Dekan(); // employess class içindeki public erişim bildirgeci sayesinde kullanabldik.
-            dekan.Works();
+            Dean dean = new Dean(); // employess class içindeki public erişim bildirgeci sayesinde kullanabldik.
+            dean.Works();
 
 
 
@@ -95,25 +95,25 @@ namespace ExampleWork
     public static class Messages
     {
         public static string ogr = "Öğrenci Çalışır";
-        public static string bolum ="Üniversite bölümleri";
+        public static string section ="Üniversite bölümleri";
     
-        public static string FAdi = "Mühendislik fakültesi";
-        public static string FAdi1 = "Sağlık bilimler fakültesi";
-        public static string BAdi = "Bilgisayar Mühendisliği";
-        public static string BAdi1 = "İnşaat Mühendisliği";
-        public static string BAdi2 = "Hemşire";
+        public static string FName = "Mühendislik fakültesi";
+        public static string FName1 = "Sağlık bilimler fakültesi";
+        public static string BName = "Bilgisayar Mühendisliği";
+        public static string BName1 = "İnşaat Mühendisliği";
+        public static string BName2 = "Hemşire";
 
-        public static string Ad1 = "Seher";
-        public static string Ad2 = "Mehmet";
-        public static string Ad3 = "Hasan";
-        public static string Ad4 = "Makbule";
-        public static string Ad5 = "Ruşen";
-        public static string Ad6 = "İlhan";
-        public static string Ad7 = "Şener";
-        public static string SAd1 = "Aslan";
-        public static string SAd2 = "Çetinkaya";
-        public static string SAd3 = "Kaplan";
-        public static string SAd4 = "aydın";
+        public static string Name1 = "Seher";
+        public static string Name2 = "Mehmet";
+        public static string Name3 = "Hasan";
+        public static string Name4 = "Makbule";
+        public static string Name5 = "Ruşen";
+        public static string Name6 = "İlhan";
+        public static string Name7 = "Şener";
+        public static string SName1 = "Aslan";
+        public static string SName2 = "Çetinkaya";
+        public static string SName3 = "Kaplan";
+        public static string SName4 = "aydın";
 
         public static string arti = "+++++++++++++++++++++++++++++++";
 
