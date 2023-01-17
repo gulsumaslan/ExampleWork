@@ -17,18 +17,18 @@ namespace Employees
     }
 
 
-    public class Dekan : IEmployees  // sadece dekan sınıfına erişebilirz başka projede
+    public class Dean : IEmployees  // sadece dekan sınıfına erişebilirz başka projede
     {
         public string Id { get; set; }
 
 
         public void Works()
         {
-            Console.WriteLine(Message.dekan);
+            Console.WriteLine(Message.dean);
         }
     }
 
-    class DekanYardimcisi : IEmployees
+    class Vicedean : IEmployees
     {
         public string Id { get; set; }
 
@@ -36,11 +36,11 @@ namespace Employees
 
         public void Works()
         {
-            Console.WriteLine(Message.dekanyardımcısı);
+            Console.WriteLine(Message.vicedean);
         }
     }
 
-    class Personel : IEmployees
+    class Employee: IEmployees
     {
         public string Id { get; set; }
 
@@ -48,14 +48,14 @@ namespace Employees
 
         public void Works()
         {
-            Console.WriteLine(Message.personel);
+            Console.WriteLine(Message.employee);
         }
     }
 
 
 
     public static class Message { // public tanımlandığından examplework projesinde kullanılabilir.
-        public static string dekan = "üniversite de dekan";
-        public static string dekanyardımcısı = "üniversite de dekan yardımcısı";
-        public static string personel = "üniversite de güvenlik personeli";
+        public static string dean = "dean at university";
+        public static string vicedean = "vice dean at university";
+        public static string employee = "security staff at university";
     } }
