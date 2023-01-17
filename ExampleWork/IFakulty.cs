@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ExampleWork
 {
-    public interface IFakulte
+    public interface IFakulty
     {
         public int Id { get; set; }
-        public string FakulteAdi { get; set; }
+        public string FakultyName { get; set; }
 
         void show();
 
