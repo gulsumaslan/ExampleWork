@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace ExampleWork
 {
-    public class Bölümler:IFakulte
+    public class  Sections:IFakulty
     {
         public int Id { get; set; }
-        public int FakülteId { get; set; }
-        public string bölümAdi { get; set; }
+        public int FacultyId { get; set; }
+        public string sectionName { get; set; }
 
 
-        public string FakulteAdi { get ; set ; }
+        public string FakultyName { get ; set ; }
 
         public void show()
         {
-            Console.WriteLine(Messages.bolum);
+            Console.WriteLine(Messages.section);
         }
     }
 }
