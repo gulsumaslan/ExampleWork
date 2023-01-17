@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExampleWork
 {
-    class Ogrenci:Ogretmen
+    class Student:Teachers
     {
 
         public int No { get; set; }
